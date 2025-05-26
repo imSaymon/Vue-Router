@@ -1,12 +1,16 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
   <div>
-    <router-link to="/">Home </router-link>
+    <router-link :to="{name: 'home'}">Home </router-link>
     |
-    <router-link to="/empresa">Empresa </router-link>
+    <router-link :to="{name: 'company'}">Empresa </router-link>
     |
-    <router-link to="/contato"> Contato</router-link>
+    <router-link :to="{name: 'team', params: { member: 'saymon' } }">Equipe </router-link>
+    |
+    <router-link :to="{name: 'contact'}"> Contato</router-link>
   </div>
+  <br>
+  <a href="" @click.stop.prevent="goBack">Voltar</a>
   <router-view/>
 </template>
 
@@ -14,6 +18,12 @@
 
 export default {
   name: 'App',
+
+  methods: {
+    goBack() {
+      this.$router.go(-1)
+    }
+  },
 }
 </script>
 
