@@ -1,13 +1,13 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "./views/Home.vue";
-import TeamView from "./views/Team.vue";
-import CompanyView from "./views/Company.vue";
-import ContactView from "./views/Contact.vue";
-import Error404 from "./views/Error404.vue";
-import CompanyHistoryView from "./views/CompanyHistoryView.vue";
-import CompanyAwardView from "./views/CompanyAwardView.vue";
+const HomeView = () => import (/*webpackChunkName: "home"*/ "./views/Home.vue");
+const TeamView = () => import (/*webpackChunkName: "team"*/ "./views/Team.vue");
+const CompanyView = () => import (/*webpackChunkName: "company"*/ "./views/Company.vue");
+const ContactView = () => import (/*webpackChunkName: "contact"*/ "./views/Contact.vue");
+const Error404 = () => import (/*webpackChunkName: "error"*/ "./views/Error404.vue");
+const CompanyHistoryView = () => import (/*webpackChunkName: "company-history"*/ "./views/CompanyHistoryView.vue");
+const CompanyAwardView = () => import (/*webpackChunkName: "company-awards"*/ "./views/CompanyAwardView.vue");
 
 const routes = [
   { 
